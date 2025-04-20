@@ -18,7 +18,7 @@ public class Brick2Player {
             GameConstants.TILE_SIZE * 7, GameConstants.TILE_SIZE * 7, GameConstants.TILE_SIZE * 11,
             GameConstants.TILE_SIZE * 12, GameConstants.TILE_SIZE * 13, GameConstants.TILE_SIZE * 13,
             GameConstants.TILE_SIZE * 11, GameConstants.TILE_SIZE * 13, GameConstants.TILE_SIZE * 16,
-            GameConstants.TILE_SIZE * 16, GameConstants.TILE_SIZE * 17, GameConstants.TILE_SIZE * 22,
+            GameConstants.TILE_SIZE * 16, GameConstants.TILE_SIZE * 17
     };
 
     int bricksYPos[] = {
@@ -28,7 +28,7 @@ public class Brick2Player {
             GameConstants.TILE_SIZE * 6, GameConstants.TILE_SIZE * 7, GameConstants.TILE_SIZE * 5,
             GameConstants.TILE_SIZE * 5, GameConstants.TILE_SIZE * 4, GameConstants.TILE_SIZE * 5,
             GameConstants.TILE_SIZE * 8, GameConstants.TILE_SIZE * 8, GameConstants.TILE_SIZE * 8,
-            GameConstants.TILE_SIZE * 9, GameConstants.TILE_SIZE * 9, GameConstants.TILE_SIZE * 5
+            GameConstants.TILE_SIZE * 9, GameConstants.TILE_SIZE * 9
     };
 
     int solidBricksXPos[] = {
@@ -37,8 +37,7 @@ public class Brick2Player {
             GameConstants.TILE_SIZE * 9, GameConstants.TILE_SIZE * 10, GameConstants.TILE_SIZE * 11,
             GameConstants.TILE_SIZE * 11, GameConstants.TILE_SIZE * 10, GameConstants.TILE_SIZE * 10,
             GameConstants.TILE_SIZE * 12, GameConstants.TILE_SIZE * 14, GameConstants.TILE_SIZE * 14,
-            GameConstants.TILE_SIZE * 15, GameConstants.TILE_SIZE * 21, GameConstants.TILE_SIZE * 23,
-            GameConstants.TILE_SIZE * 23, GameConstants.TILE_SIZE * 23, GameConstants.TILE_SIZE * 19
+            GameConstants.TILE_SIZE * 15, GameConstants.TILE_SIZE * 19
     };
 
     int solidBricksYPos[] = {
@@ -47,8 +46,7 @@ public class Brick2Player {
             GameConstants.TILE_SIZE * 2, GameConstants.TILE_SIZE * 2, GameConstants.TILE_SIZE * 2,
             GameConstants.TILE_SIZE * 1, GameConstants.TILE_SIZE * 7, GameConstants.TILE_SIZE * 8,
             GameConstants.TILE_SIZE * 8, GameConstants.TILE_SIZE * 7, GameConstants.TILE_SIZE * 8,
-            GameConstants.TILE_SIZE * 3, GameConstants.TILE_SIZE * 5, GameConstants.TILE_SIZE * 3,
-            GameConstants.TILE_SIZE * 4, GameConstants.TILE_SIZE * 5, GameConstants.TILE_SIZE * 2
+            GameConstants.TILE_SIZE * 3, GameConstants.TILE_SIZE * 2
     };
 
     int brickON[] = new int[bricksXPos.length];

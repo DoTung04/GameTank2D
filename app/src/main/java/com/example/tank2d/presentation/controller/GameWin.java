@@ -15,12 +15,15 @@ public class GameWin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_win);
+        Intent intent1 = getIntent();
+        boolean isMusicGunOn = intent1.getBooleanExtra("musicgun", false);
 
         // Nút Play Again
         Button btnPlayAgain = findViewById(R.id.btnPlayAgain);
         if (btnPlayAgain != null) {
             btnPlayAgain.setOnClickListener(v -> {
                 Intent intent = new Intent(GameWin.this, MapPlayerBot.class);
+                intent.putExtra("musicgun", isMusicGunOn);
                 startActivity(intent);
                 finish();
             });

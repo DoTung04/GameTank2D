@@ -42,6 +42,7 @@ public class MapPlayerBot extends AppCompatActivity {
 
                     mediaPlayer.start();
                 }
+                viewPlayerBot.setIsMusicGunOn(isMusicGunOn);
                 viewPlayerBot.getTank1().fire();
                 viewPlayerBot.invalidate();
             }

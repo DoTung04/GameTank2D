@@ -22,6 +22,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ViewPlayervsPlayer extends View implements CollisionHandler {
+    private boolean isMusicGunOn;
     private Context context;
     private Tank tank1, tank2;
     private Brick2Player brick;
@@ -48,6 +49,8 @@ public class ViewPlayervsPlayer extends View implements CollisionHandler {
     public Tank getTank2() { return tank2; }
     public void setTank2(Tank tank2) { this.tank2 = tank2; }
     public Brick2Player getBrick() { return brick; }
+    public boolean getIsMusicGunOn() { return isMusicGunOn; }
+    public void setIsMusicGunOn(boolean isMusicGunOn) { this.isMusicGunOn = isMusicGunOn; }
     public void setBrick(Brick2Player brick) { this.brick = brick; }
 
     public ViewPlayervsPlayer(Context context, AttributeSet attrs) {
@@ -166,6 +169,7 @@ public class ViewPlayervsPlayer extends View implements CollisionHandler {
                     bulletHandler.removeCallbacks(this); // Dừng update đạn
                     Intent intent = new Intent(context, WhoWin.class);
                     intent.putExtra("player", "Player 1");
+                    intent.putExtra("musicgun", getIsMusicGunOn());
                     context.startActivity(intent);
                     if (context instanceof MapPlayerBot) {
                         ((MapPlayerBot) context).finish();
@@ -177,6 +181,7 @@ public class ViewPlayervsPlayer extends View implements CollisionHandler {
                     bulletHandler.removeCallbacks(this); // Dừng update đạn
                     Intent intent = new Intent(context, WhoWin.class);
                     intent.putExtra("player", "Player 2");
+                    intent.putExtra("musicgun", getIsMusicGunOn());
                     context.startActivity(intent);
                     if (context instanceof MapPlayerBot) {
                         ((MapPlayerBot) context).finish();

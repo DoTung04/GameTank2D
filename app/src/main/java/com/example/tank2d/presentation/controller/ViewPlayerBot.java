@@ -26,6 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ViewPlayerBot extends View implements CollisionHandler {
+    private boolean isMusicGunOn;
     private Context context;
     private List<Bot> bots;
     private Tank tank1;
@@ -79,6 +80,8 @@ public class ViewPlayerBot extends View implements CollisionHandler {
     public void setTank1(Tank tank1) { this.tank1 = tank1; }
     public Brick getBrick() { return brick; }
     public void setBrick(Brick brick) { this.brick = brick; }
+    public boolean getIsMusicGunOn() { return isMusicGunOn; }
+    public void setIsMusicGunOn(boolean isMusicGunOn) { this.isMusicGunOn = isMusicGunOn; }
 
     public ViewPlayerBot(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -167,7 +170,7 @@ public class ViewPlayerBot extends View implements CollisionHandler {
                     List<Bullet> bulletsToRemove = new ArrayList<>();
                     for (Bullet bullet : tank1.getBullets()) {
                         bullet.move(bullet.getDirection());
-                        if (bullet.getX() < 0 || bullet.getX() > GameConstants.TILE_SIZE * GameConstants.GRID_WIDTH ||
+                        if (bullet.getX() < 0 || bullet.getX() > GameConstants.TILE_SIZE * GameConstants.GRID_WIDTH||
                                 bullet.getY() < 0 || bullet.getY() > GameConstants.TILE_SIZE * GameConstants.GRID_HEIGHT ||
                                 checkBulletCollision(bullet.getX(), bullet.getY())) {
                             bulletsToRemove.add(bullet);
@@ -193,7 +196,7 @@ public class ViewPlayerBot extends View implements CollisionHandler {
                         List<Bullet> bulletsToRemove = new ArrayList<>();
                         for (Bullet bullet : bot.getBullets()) {
                             bullet.move(bullet.getDirection());
-                            if (bullet.getX() < 0 || bullet.getX() > GameConstants.TILE_SIZE * GameConstants.GRID_WIDTH ||
+                            if (bullet.getX() < 0 || bullet.getX() > GameConstants.TILE_SIZE * GameConstants.GRID_WIDTH||
                                     bullet.getY() < 0 || bullet.getY() > GameConstants.TILE_SIZE * GameConstants.GRID_HEIGHT ||
                                     checkBulletCollision(bullet.getX(), bullet.getY())) {
                                 bulletsToRemove.add(bullet);
@@ -223,6 +226,7 @@ public class ViewPlayerBot extends View implements CollisionHandler {
                 if (allBotsDead) {
                     bulletHandler.removeCallbacks(this); // Dừng update đạn
                     Intent intent = new Intent(context, GameWin.class);
+                    intent.putExtra("musicgun", getIsMusicGunOn());
                     context.startActivity(intent);
                     if (context instanceof MapPlayerBot) {
                         ((MapPlayerBot) context).finish();
@@ -234,6 +238,7 @@ public class ViewPlayerBot extends View implements CollisionHandler {
                 if (!tank1.isAlive()) {
                     bulletHandler.removeCallbacks(this); // Dừng update đạn
                     Intent intent = new Intent(context, GameOver.class);
+                    intent.putExtra("musicgun", getIsMusicGunOn());
                     context.startActivity(intent);
                     if (context instanceof MapPlayerBot) {
                         ((MapPlayerBot) context).finish();

@@ -15,6 +15,8 @@ public class GameOver extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_over);
+        Intent intent1 = getIntent();
+        boolean isMusicGunOn = intent1.getBooleanExtra("musicgun", false);
 
         // Nút Play Again
         Button btnPlayAgain = findViewById(R.id.btnPlayAgain);
@@ -22,6 +24,7 @@ public class GameOver extends AppCompatActivity {
             btnPlayAgain.setOnClickListener(v -> {
                 // Chuyển về màn hình chơi game (giả sử là GameActivity)
                 Intent intent = new Intent(GameOver.this, MapPlayerBot.class); // Thay GameActivity bằng activity chơi game của bạn
+                intent.putExtra("musicgun", isMusicGunOn);
                 startActivity(intent);
                 finish();
             });

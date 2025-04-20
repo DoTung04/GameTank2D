@@ -61,8 +61,8 @@ public class Tank {
         int newY = tankY + deltaY;
 
         if (collisionHandler.checkTankCollision(newX, newY) ||
-                newX < 0 || newX > GameConstants.TILE_SIZE * GameConstants.GRID_WIDTH ||
-                newY < 0 || newY > GameConstants.TILE_SIZE * GameConstants.GRID_HEIGHT) {
+                newX < 0 || newX > GameConstants.TILE_SIZE * (GameConstants.GRID_WIDTH - 1) ||
+                newY < 0 || newY > GameConstants.TILE_SIZE * (GameConstants.GRID_HEIGHT - 1)) {
             if (deltaX > 0) tankImage = tankRight;
             else if (deltaX < 0) tankImage = tankLeft;
             else if (deltaY > 0) tankImage = tankDown;
@@ -106,23 +106,6 @@ public class Tank {
             bullets.add(newBullet);
             lastFireTime = System.currentTimeMillis();
         }
-    }
-
-    public List<Bullet> moveBullets(CollisionHandler collisionHandler) {
-        List<Bullet> bulletsToRemove = new ArrayList<>();
-        Iterator<Bullet> iterator = bullets.iterator();
-        while (iterator.hasNext()) {
-            Bullet bullet = iterator.next();
-            bullet.move(bullet.getDirection());
-
-            // Kiểm tra đạn ra khỏi màn hình hoặc va chạm
-            if (bullet.getX() < 0 || bullet.getX() > GameConstants.TILE_SIZE * GameConstants.GRID_WIDTH ||
-                    bullet.getY() < 0 || bullet.getY() > GameConstants.TILE_SIZE * GameConstants.GRID_HEIGHT ||
-                    collisionHandler.checkBulletCollision(bullet.getX(), bullet.getY())) {
-                bulletsToRemove.add(bullet);
-            }
-        }
-        return bulletsToRemove;
     }
 
     public void recycleBitmaps() {

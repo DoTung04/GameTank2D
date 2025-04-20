@@ -25,11 +25,14 @@ public class WhoWin extends AppCompatActivity {
         String winner = intent.getStringExtra("player");
         tvview.setText(winner + " win!");
 
+        boolean isMusicGunOn = intent.getBooleanExtra("musicgun", false);
+
         // Nút Play Again
         Button btnPlayAgain = findViewById(R.id.btnPlayAgain);
         if (btnPlayAgain != null) {
             btnPlayAgain.setOnClickListener(v -> {
                 Intent intent1 = new Intent(WhoWin.this, MapPlayervsPlayer.class);
+                intent1.putExtra("musicgun", isMusicGunOn);
                 startActivity(intent1);
                 finish();
             });

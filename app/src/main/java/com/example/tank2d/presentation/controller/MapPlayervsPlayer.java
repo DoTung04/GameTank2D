@@ -39,6 +39,7 @@ public class MapPlayervsPlayer extends AppCompatActivity {
                     mediaPlayer = MediaPlayer.create(this, R.raw.soundshoot);
                     mediaPlayer.start(); // Phát nhạc
                 }
+                viewPlayervsPlayer.setIsMusicGunOn(isMusicGunOn);
                 viewPlayervsPlayer.getTank1().fire();
                 viewPlayervsPlayer.invalidate();
             }

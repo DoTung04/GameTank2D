@@ -47,3 +47,6 @@ Nếu bạn muốn đóng góp:
 1. Fork repository này.
 2. Tạo nhánh mới cho tính năng hoặc sửa lỗi: `git checkout -b feature-name`.
 3. Gửi pull request với mô tả chi tiết.
+
+   ![image](https://github.com/user-attachments/assets/204187a6-7ce1-419a-a0b4-623edfb30400)
+

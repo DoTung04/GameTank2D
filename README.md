@@ -48,5 +48,12 @@ Nếu bạn muốn đóng góp:
 2. Tạo nhánh mới cho tính năng hoặc sửa lỗi: `git checkout -b feature-name`.
 3. Gửi pull request với mô tả chi tiết.
 
-   ![image](https://github.com/user-attachments/assets/204187a6-7ce1-419a-a0b4-623edfb30400)
+## Ảnh minh họa
+
+![image](https://github.com/user-attachments/assets/438aab2c-ea84-4765-bd53-80877cfd40e2)
+![image](https://github.com/user-attachments/assets/e3850a57-945d-4919-80a8-8562ad9ddb4f)
+![image](https://github.com/user-attachments/assets/5de51ca6-ed36-44f6-8a84-0323001c9437)
+![image](https://github.com/user-attachments/assets/311fc345-68ba-426b-ae80-089ebcc79b2e)
+![image](https://github.com/user-attachments/assets/e68aed02-4903-4507-88de-35ceb1c6dbb2)
+![image](https://github.com/user-attachments/assets/204187a6-7ce1-419a-a0b4-623edfb30400)
 
